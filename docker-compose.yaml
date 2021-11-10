@@ -1,0 +1,15 @@
+version: "3"
+services:
+  frontend:
+    image: mic_frontend
+    container_name: mic_frontend
+    volumes:
+      - "${SRC}/frontend/:/var/www"
+      - "/var/www/node_modules"
+    environment:
+      - NUXT_HOST=0.0.0.0
+    ports:
+    - "8000:8000"
+#  backend:
+#    volumes:
+#      - "${SRC}backend:/var/www"
