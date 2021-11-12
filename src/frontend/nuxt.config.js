@@ -42,9 +42,23 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  axios: {
+    baseURL: "/"
+  },
+  proxy: {
+    '/api': {
+      target: 'https://mic_backend:8080',
+      secure: false,
+      pathRewrite: {
+        '^/api' : '/'
+      }
+    }
   }
 }

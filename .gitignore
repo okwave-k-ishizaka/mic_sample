@@ -1,4 +1,5 @@
-
+*.wav
+*.pyc
 # Created by https://www.toptal.com/developers/gitignore/api/nuxtjs,node,macos,linux,intellij
 # Edit at https://www.toptal.com/developers/gitignore?templates=nuxtjs,node,macos,linux,intellij
 

@@ -1,7 +1,7 @@
 version: "3"
 services:
   frontend:
-    image: mic_frontend
+    image: mic_sample:frontend
     container_name: mic_frontend
     volumes:
       - "${SRC}/frontend/:/var/www"
@@ -10,6 +10,13 @@ services:
       - NUXT_HOST=0.0.0.0
     ports:
     - "8000:8000"
-#  backend:
-#    volumes:
-#      - "${SRC}backend:/var/www"
+  backend:
+    image: mic_sample:backend
+    container_name: mic_backend
+    tty: true
+    volumes:
+      - "${SRC}/backend:/var/www"
+    ports:
+      - "8080:8080"
+    command:
+      "python server.py"
